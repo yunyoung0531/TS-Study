@@ -162,3 +162,39 @@ let 정보2 : newUser = {
     phone: 123,
     adult : true
 }
+
+
+type Member = {
+    name : string,
+    age : number,
+    plusOne : ( x: number ) => number,
+    changeName : () => void
+}
+let 회원정보 = {
+    name : 'kim',
+    age : 30,
+    plusOne (x: number){
+        return x + 1
+    },
+    changeName : () => {
+        console.log('안녕')
+    }
+}
+회원정보.plusOne(1);
+회원정보.changeName();
+
+// - cutZero()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 맨 앞에 '0' 문자가 있으면 제거하고 문자 type으로 return 해줍니다.
+// - removeDash()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 대시기호 '-' 가 있으면 전부 제거해주고 그걸 숫자 type으로 return 해줍니다. 
+// - 함수에 타입지정시 type alias를 꼭 써보도록 합시다. 
+
+type 컷제로 = (a : string) => string;
+let cutZero : 컷제로 = function(x) {
+    let result = x.replace(/^0+/, "");
+    return result;
+}
+
+type 리무브대시 = (a : string) => number;
+let removeDash : 리무브대시 = function(x) {
+    let result = x.replace(/-/g, "");
+    return +result;
+}
