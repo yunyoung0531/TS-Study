@@ -102,3 +102,13 @@ function 과목(x) {
     }
 }
 console.log(과목(민수쌤));
+var teacher = { name: 'john', age: 20 };
+var 정보 = {
+    name: 'kim',
+    phone: 123
+};
+var 정보2 = {
+    name: 'kim',
+    phone: 123,
+    adult: true
+};
